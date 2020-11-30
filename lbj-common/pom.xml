@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>lbj-common-util</module>
+        <module>lbj-common-core</module>
     </modules>
 
     <parent>
