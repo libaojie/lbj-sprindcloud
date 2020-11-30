@@ -1,5 +1,6 @@
 package com.lbj.common.core.ret;
 
+import com.lbj.common.core.config.IErrorCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
