@@ -6,6 +6,7 @@
     <modules>
         <module>lbj-common-util</module>
         <module>lbj-common-core</module>
+        <module>lbj-common-client</module>
     </modules>
 
     <parent>
