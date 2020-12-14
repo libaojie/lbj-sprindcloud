@@ -1,7 +1,6 @@
 package com.lbj.common.feign.config;
 
 import com.netflix.hystrix.HystrixThreadPoolKey;
-import com.netflix.hystrix.HystrixThreadPoolProperties;
 import com.netflix.hystrix.strategy.HystrixPlugins;
 import com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategy;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariable;
@@ -82,11 +81,11 @@ public class FeignHystrixConcurrencyStrategy extends HystrixConcurrencyStrategy 
                 unit, workQueue);
     }
 
-    @Override
-    public ThreadPoolExecutor getThreadPool(HystrixThreadPoolKey threadPoolKey,
-                                            HystrixThreadPoolProperties threadPoolProperties) {
-        return this.delegate.getThreadPool(threadPoolKey, threadPoolProperties);
-    }
+//    @Override
+//    public ThreadPoolExecutor getThreadPool(HystrixThreadPoolKey threadPoolKey,
+//                                            HystrixThreadPoolProperties threadPoolProperties) {
+//        return this.delegate.getThreadPool(threadPoolKey, threadPoolProperties);
+//    }
 
     @Override
     public BlockingQueue<Runnable> getBlockingQueue(int maxQueueSize) {
