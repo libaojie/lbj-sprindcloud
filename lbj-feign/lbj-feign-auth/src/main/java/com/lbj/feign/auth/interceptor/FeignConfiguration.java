@@ -21,7 +21,7 @@ public class FeignConfiguration implements RequestInterceptor {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 
         // ----------------------------------------直接塞参数 ----------------------------------------
-//        template.header("ApplicationCode", "dmatdmp");
+//        template.header("ApplicationCode", "lbj");
 //        template.header("AuthUserName", "admin_all");
 //        template.header("AuthPassword", "123456");
         // ------------------------------------------------------------------------------------------

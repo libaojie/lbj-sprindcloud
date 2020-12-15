@@ -1,0 +1,12 @@
+bversion: local
+
+spring:
+  application:
+    name: lbj-sidecar-es
+  cloud:
+    config:
+      uri: http://127.0.0.1:15002
+      enabled: true
+      profile: dev
+      label: ""
+

@@ -1,8 +1,5 @@
 package com.lbj.gateway.filter;
 
-//import com.hirisun.feign.ca.client.CaFeignClient;
-
-
 import com.alibaba.fastjson.JSONObject;
 import com.lbj.common.core.config.ErrorCode;
 import com.lbj.common.core.constants.Attribute;
@@ -44,7 +41,7 @@ public class LoginFilter implements GlobalFilter, Ordered {
     private static final Logger logger = LoggerFactory.getLogger(LoginFilter.class);
 
 
-    @Value("${dmat-auth.enable}")
+    @Value("${lbj-auth.enable}")
     boolean authEnable;
 
     @Autowired

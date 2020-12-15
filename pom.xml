@@ -11,6 +11,7 @@
         <module>lbj-config</module>
         <module>lbj-gateway</module>
         <module>lbj-feign</module>
+        <module>lbj-sidecar</module>
     </modules>
 
     <name>${project.artifactId}</name>

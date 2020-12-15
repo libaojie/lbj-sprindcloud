@@ -27,7 +27,7 @@ public class GatewayConfiguration {
 //                // 转发百度
 //                .route(r -> r.path("/baidu").uri("http://baidu.com:80/"))
 //                // 转发ca
-//                .route(r -> r.path("/api/v1/ca/*").uri("lb://dmat-client-ca/"))
+//                .route(r -> r.path("/api/v1/ca/*").uri("lb://lbj-client-ca/"))
 //                .build();
 //    }
 }

@@ -9,9 +9,9 @@ import java.util.UUID;
 
 public class StringUtil {
 
-//	public static boolean isNull(String value) {
-//		return StringUtils.isEmpty(value);
-//	}
+	public static boolean isNull(String value) {
+		return StringUtils.isEmpty(value);
+	}
 
 	public static boolean isNotBlank(String str) {
 		return str != null && !str.equals("");

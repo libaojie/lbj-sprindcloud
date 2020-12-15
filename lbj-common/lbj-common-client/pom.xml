@@ -49,9 +49,17 @@
 
         <!-- 公共模块 core -->
         <dependency>
-            <groupId>com.hirisun.common.core</groupId>
-            <artifactId>dmat-common-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.lbj.common.core</groupId>
+            <artifactId>lbj-common-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- 公共模块 util -->
+        <dependency>
+            <groupId>com.lbj.common.util</groupId>
+            <artifactId>lbj-common-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 </project>

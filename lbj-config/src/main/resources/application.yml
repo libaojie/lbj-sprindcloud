@@ -22,10 +22,10 @@ spring:
           searchLocations: file:../eureka-config-data/config,../../eureka-config-data/config   # 配置文件所在目录，file是直接通过本地文件系统并相对于本项目的路径加载读取
 #          searchLocations: file:../../eureka-config-data/config   # 配置文件所在目录，file是直接通过本地文件系统并相对于本项目的路径加载读取
 #           searchLocations: classpath:/config   # 配置文件所在目录，直接从项目的src/main/resources下进行加载读取配置文件
-#          searchLocations: /home/DMATAPP/application/eureka-config-data/config  # 内网配置
+#          searchLocations: /home/lbj/application/eureka-config-data/config  # 内网配置
 #          searchLocations: /root/application/eureka-config-data/config  # 北京现场配置
 #        git: 
-#          uri: http://211.159.154.197:11001/konglingzhan/SpringcloudConfig
+#          uri: http://127.0.0.1:11001/lbj/SpringcloudConfig
 #          searchPaths: respo
 #          username: 
 #          password: 

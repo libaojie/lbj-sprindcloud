@@ -1,8 +1,8 @@
 package com.lbj.common.client.ret;
 
 import com.github.pagehelper.PageInfo;
-import com.hirisun.common.core.config.IErrorCodeEnum;
-import com.hirisun.common.core.ret.CommRes;
+import com.lbj.common.core.config.IErrorCodeEnum;
+import com.lbj.common.core.ret.CommRes;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 

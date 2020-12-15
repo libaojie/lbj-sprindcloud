@@ -1,12 +1,12 @@
 package com.lbj.common.client.base;
 
 
-import com.hirisun.common.core.config.ErrorCode;
-import com.hirisun.common.core.ret.CommRes;
-import com.hirisun.common.util.TimeUtil;
 import com.lbj.common.client.ret.PageCallback;
 import com.lbj.common.client.util.PageUtils;
 import com.lbj.common.client.util.UserUtil;
+import com.lbj.common.core.config.ErrorCode;
+import com.lbj.common.core.ret.CommRes;
+import com.lbj.common.util.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,12 +42,9 @@ public abstract class BaseService<T> {
     /**
      * 多条件分页
      *
-     * @param t
-     * @param pageNum
-     * @param pageSize
      * @return
      */
-    public CommRes<List<T>> find(T t, Integer pageNum, Integer pageSize) {
+    public CommRes find(T t, Integer pageNum, Integer pageSize) {
         return PageUtils.find(pageNum, pageSize, new PageCallback() {
             @Override
             public Object execute() {
