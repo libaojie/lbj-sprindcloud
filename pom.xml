@@ -7,6 +7,7 @@
     <artifactId>lbj-springcloud</artifactId>
     <modules>
         <module>lbj-eureka</module>
+        <module>lbj-config</module>
     </modules>
     <groupId>com.lbj</groupId>
     <version>1.0-SNAPSHOT</version>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lbj-springcloud</artifactId>
+        <groupId>com.lbj</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.lbj.config</groupId>
+    <artifactId>lbj-config</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+    <description>配置中心</description>
+
+    <dependencies>
+
+        <!--&lt;!&ndash;使用Spring MVC构建Web（包括RESTful）应用程序的入门程序。使用Tomcat作为默认的嵌入式容器&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-config-server</artifactId>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;spring cloud 中的许多特性都已经被spring boot实现，其他一些特性主要是通过spring cloud context 和 spring cloud commons来实现的。-->
+                <!--spring cloud context提供了一些常用的公共类以及spring cloud 特有的服务(bootstrap context, encryption, refresh scope, and environment endpoints)；-->
+                <!--spring cloud commons提供了一系列的抽象类和公共类，供spring cloud不同的实现组件去使用(such as Spring Cloud Netflix and Spring Cloud Consul)。&ndash;&gt;-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-commons &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-commons</artifactId>-->
+        <!--</dependency>-->
+
+        <!--配置中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+            <version>2.0.2.RELEASE</version>
+        </dependency>
+
+        <!-- 需注册到 注册中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+            <version>2.0.0.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <!-- 添加spring的插件， 就可以直接通过 mvn spring-boot:run 运行了 -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.4.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

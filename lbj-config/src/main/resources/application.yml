@@ -1,0 +1,47 @@
+# 配置eureka 的注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:10001/eureka/
+
+# 注册服务的端口
+server:
+  port: 10002
+ 
+# 配置当前服务的名称 
+spring:
+  application:
+    name: lbj-config # 配置服务名称
+
+  profiles:
+    active: native # 设置为本地启动的方式，而不是通过git
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:../eureka-config-data/config,../../eureka-config-data/config   # 配置文件所在目录，file是直接通过本地文件系统并相对于本项目的路径加载读取
+#          searchLocations: file:../../eureka-config-data/config   # 配置文件所在目录，file是直接通过本地文件系统并相对于本项目的路径加载读取
+#           searchLocations: classpath:/config   # 配置文件所在目录，直接从项目的src/main/resources下进行加载读取配置文件
+#          searchLocations: /home/DMATAPP/application/eureka-config-data/config  # 内网配置
+#          searchLocations: /root/application/eureka-config-data/config  # 北京现场配置
+#        git: 
+#          uri: http://211.159.154.197:11001/konglingzhan/SpringcloudConfig
+#          searchPaths: respo
+#          username: 
+#          password: 
+#      label: master # 分支
+
+# 关闭微服务
+management:
+  endpoints:
+    web:
+      exposure:
+        #include: shutdown
+        include: "*"
+  endpoint:
+    shutdown:
+      # 开启优雅关闭方式
+      enabled: true
+  security:
+    # 关闭安全认证
+    enabled: false 
