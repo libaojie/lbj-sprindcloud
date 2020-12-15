@@ -3,19 +3,61 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.lbj</groupId>
     <artifactId>lbj-springcloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>lbj-eureka</module>
         <module>lbj-config</module>
+        <module>lbj-gateway</module>
+        <module>lbj-feign</module>
     </modules>
-    <groupId>com.lbj</groupId>
-    <version>1.0-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
     <description>集群</description>
-
     <packaging>pom</packaging>
 
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+
+            <!-- jar中没有主清单属性 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <!-- 此处原来是 -->
+                <!-- <artifactId>maven-war-plugin</artifactId> -->
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+                    <!--<fork>true</fork>-->
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

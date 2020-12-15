@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lbj-feign</artifactId>
+        <groupId>com.lbj.feign</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lbj-feign-auth</artifactId>
+
+    <groupId>com.lbj.feign.auth</groupId>
+    <description>认证api,只提供给gateway</description>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--jackson是基于Java平台的一套数据处理工具，被称为”最好的Java Json解析器”。它可以使我们高效、简便的处理json字符串。-->
+        <!--jackson-core——核心包（必须），提供基于“流模式”解析的API。核心包：JsonPaser（json流读取），JsonGenerator（json流输出）。-->
+        <!--jackson-annotations——注解包（可选），提供注解功能。-->
+        <!--<dependency>-->
+            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+            <!--<artifactId>jackson-core</artifactId>-->
+        <!--</dependency>-->
+        <!--jackson-databind——数据绑定包（可选），提供基于“对象绑定”和“树模型”相关API。数据绑定包：ObjectMapper（构建树模式和对象绑定模式），JsonNode（树节点）。-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.4</version>
+        </dependency>
+        <!--jackson-datatype-joda——日期转换-->
+        <!--<dependency>-->
+            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
+            <!--<artifactId>jackson-datatype-joda</artifactId>-->
+        <!--</dependency>-->
+
+
+        <!-- swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

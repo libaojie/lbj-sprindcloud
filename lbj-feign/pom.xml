@@ -3,18 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>lbj-common</artifactId>
-        <groupId>com.lbj.common</groupId>
+        <artifactId>lbj-springcloud</artifactId>
+        <groupId>com.lbj</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.lbj.common.feign</groupId>
-    <artifactId>lbj-common-feign</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
-    <packaging>jar</packaging>
-    <description>feignd的公共模块</description>
 
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>lbj-feign</artifactId>
+    <groupId>com.lbj.feign</groupId>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+    <description>api</description>
 
     <dependencies>
 
@@ -25,13 +26,26 @@
             <version>2.0.0.RELEASE</version>
         </dependency>
 
-        <!-- HttpRequest -->
+        <!-- 自定义 核心公共模块-->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
+            <groupId>com.lbj.common.core</groupId>
+            <artifactId>lbj-common-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 自定义 feign公共模块-->
+        <dependency>
+            <groupId>com.lbj.common.feign</groupId>
+            <artifactId>lbj-common-feign</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
+
+
+
+    <modules>
+        <module>lbj-feign-auth</module>
+    </modules>
+
 </project>

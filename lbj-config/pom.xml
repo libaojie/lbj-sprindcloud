@@ -16,27 +16,6 @@
 
     <dependencies>
 
-        <!--&lt;!&ndash;使用Spring MVC构建Web（包括RESTful）应用程序的入门程序。使用Tomcat作为默认的嵌入式容器&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
-        <!--</dependency>-->
-
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-config-server</artifactId>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash;spring cloud 中的许多特性都已经被spring boot实现，其他一些特性主要是通过spring cloud context 和 spring cloud commons来实现的。-->
-                <!--spring cloud context提供了一些常用的公共类以及spring cloud 特有的服务(bootstrap context, encryption, refresh scope, and environment endpoints)；-->
-                <!--spring cloud commons提供了一系列的抽象类和公共类，供spring cloud不同的实现组件去使用(such as Spring Cloud Netflix and Spring Cloud Consul)。&ndash;&gt;-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-commons &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-commons</artifactId>-->
-        <!--</dependency>-->
-
         <!--配置中心-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
