@@ -1,0 +1,36 @@
+server:
+  port: 10001
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: eureka-server
+    
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: root
+    
+# 关闭微服务
+management:
+  endpoints:
+    web:
+      exposure:
+        #include: shutdown
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true #开启优雅关闭方式
+  security:
+    enabled: false #关闭安全认证 
