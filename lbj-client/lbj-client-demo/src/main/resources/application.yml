@@ -1,0 +1,26 @@
+server:
+  port: 16001
+spring:
+  application:
+    name: lbj-client-demo
+#  #热部署生效
+#  devtools:
+#    restart:
+#      enabled: true
+#      #设置重启的目录,添加那个目录的文件需要restart
+#      additional-paths: src/main/java
+#  # 声明生效的配置文件
+#  profiles:
+#    # 正式环境
+#    active: pro
+
+# 配置日志级别
+logging:
+  level:
+    #    root: info
+    root: debug
+  file: ./data/log/${spring.application.name}.log
+
+
+
+

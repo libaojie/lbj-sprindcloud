@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nx-client-demo
+  namespace: default
+spec:
+  containers:
+    - name: nx-client-demo
+      image: 192.168.160.232:11005/library/nx-client-demo:1.0
+      ports:
+        - containerPort: 16001
