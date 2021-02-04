@@ -5,7 +5,7 @@ FROM openjdk:8-jdk-alpine
 RUN mkdir -p /usr/local/pasq
 
 #编译后的jar包copy到容器中创建到目录内
-COPY target/lbj-client-demo-1.0-SNAPSHOT.jar /usr/local/pasq/myapp.jar
+COPY target/lbj-client-demo-1.0-SNAPSHOT.jar /usr/local/jar/lbj-client-demo-1.0-SNAPSHOT.jar
 
 #指定容器启动时要执行的命令
-ENTRYPOINT ["java","-jar","/usr/local/pasq/myapp.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/jar/lbj-client-demo-1.0-SNAPSHOT.jar"]
