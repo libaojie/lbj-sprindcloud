@@ -13,26 +13,26 @@
             resultType="com.lbj.distributed.db.model.DistributeLock">
         select
         id AS "id",
-        code as "dictCode",
-        name as "dictName"
+        code as "code",
+        name as "name"
         from t_dist_db
-        <where> 1=1
-            <choose>
-                <when test="delFlag != null and delFlag != '' and delFlag == '-1'">
-                    AND 2=2
-                </when>
-                <when test="delFlag != null and delFlag != '' and delFlag != '-1'">
-                    AND A.DEL_FLAG = #{delFlag}
-                </when>
-                <otherwise>
-                    AND A.DEL_FLAG = '0'
-                </otherwise>
-            </choose>
+        <!--<where> 1=1-->
+            <!--<choose>-->
+                <!--<when test="delFlag != null and delFlag != '' and delFlag == '-1'">-->
+                    <!--AND 2=2-->
+                <!--</when>-->
+                <!--<when test="delFlag != null and delFlag != '' and delFlag != '-1'">-->
+                    <!--AND A.DEL_FLAG = #{delFlag}-->
+                <!--</when>-->
+                <!--<otherwise>-->
+                    <!--AND A.DEL_FLAG = '0'-->
+                <!--</otherwise>-->
+            <!--</choose>-->
 
-            <if test="code != null and code != ''">
-                AND code LIKE CONCAT(CONCAT('%',#{dictCode}),'%')
-            </if>
-        </where>
+            <!--<if test="code != null and code != ''">-->
+                <!--AND code LIKE CONCAT(CONCAT('%',#{dictCode}),'%')-->
+            <!--</if>-->
+        <!--</where>-->
     </select>
 
     <insert id="insert">

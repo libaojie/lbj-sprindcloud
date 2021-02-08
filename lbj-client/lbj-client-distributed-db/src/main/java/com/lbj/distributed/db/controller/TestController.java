@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Classname TestController
@@ -25,7 +26,7 @@ public class TestController {
     @Transactional(rollbackFor = Exception.class)
     public CommRes singleLock() throws Exception {
         DistributeLock distributeLock = distributeLockMapper.selectDistributeLock("test");
-        if (distributeLock==null) {
+        if (distributeLock == null) {
             return new CommRes(ErrorCode.SUCCESS, "找不到锁");
         }
         try {
@@ -34,6 +35,12 @@ public class TestController {
             e.printStackTrace();
         }
         return new CommRes(ErrorCode.SUCCESS, "完成");
+    }
+
+    @RequestMapping("list")
+    public CommRes list() throws Exception {
+        List<DistributeLock> distributeLock = distributeLockMapper.find();
+        return new CommRes(ErrorCode.SUCCESS, distributeLock);
     }
 
 }

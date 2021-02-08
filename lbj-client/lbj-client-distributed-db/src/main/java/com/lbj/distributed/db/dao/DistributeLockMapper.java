@@ -5,6 +5,8 @@ import com.lbj.distributed.db.model.DistributeLock;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * @Classname DistributeLockMapper
  * @Description TODO
@@ -14,4 +16,5 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface DistributeLockMapper {
     DistributeLock selectDistributeLock(@Param("code") String code);
+    List<DistributeLock> find();
 }
