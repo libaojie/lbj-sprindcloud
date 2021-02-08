@@ -10,6 +10,7 @@
         <module>lbj-client-demo</module>
         <module>lbj-client-kafka-provider</module>
         <module>lbj-client-kafka-consumer</module>
+        <module>lbj-distributed-db</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>功能端</description>

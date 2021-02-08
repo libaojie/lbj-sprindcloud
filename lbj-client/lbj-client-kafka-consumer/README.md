@@ -1,13 +1,4 @@
-# lbj-client-demo
+# lbj-client-kafka-consumer
 
-    部署docker到k8s
+    kafka消费端
     
-## 1.打包
-## 2.创建dockerfile
-    
-    mkdir -r /home/lbj/Desktop/Docker
-    vi Dockerfile
-    
-## 3.构建镜像 
-       
-       docker build -f Dockerfile -t lbj-client-demo:latest .

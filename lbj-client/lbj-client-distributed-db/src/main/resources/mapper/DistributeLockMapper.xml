@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lbj.distributed.db.dao.DistributeLockMapper">
+
+    <select id="selectDistributeLock" resultType="com.lbj.distributed.db.model.DistributeLock">
+    	select * from t_dist_db
+    	where code = #{code,jdbcType=VARCHAR}
+    	for update
+  	</select>
+
+    <select id="find"
+            parameterType="com.lbj.distributed.db.model.DistributeLock"
+            resultType="com.lbj.distributed.db.model.DistributeLock">
+        select
+        id AS "id",
+        code as "dictCode",
+        name as "dictName"
+        from t_dist_db
+        <where> 1=1
+            <choose>
+                <when test="delFlag != null and delFlag != '' and delFlag == '-1'">
+                    AND 2=2
+                </when>
+                <when test="delFlag != null and delFlag != '' and delFlag != '-1'">
+                    AND A.DEL_FLAG = #{delFlag}
+                </when>
+                <otherwise>
+                    AND A.DEL_FLAG = '0'
+                </otherwise>
+            </choose>
+
+            <if test="code != null and code != ''">
+                AND code LIKE CONCAT(CONCAT('%',#{dictCode}),'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert">
+        INSERT INTO t_dist_db(
+        ID,
+        code,
+        name
+        ) VALUES (
+        #{id,jdbcType=VARCHAR},
+        #{code,jdbcType=VARCHAR},
+        #{name,jdbcType=VARCHAR}
+        <!--<choose>-->
+            <!--<when test="isSysParm != null and isSysParm != ''">-->
+                <!--#{isSysParm},-->
+            <!--</when>-->
+            <!--<otherwise>-->
+                <!--'0'-->
+            <!--</otherwise>-->
+        <!--</choose>-->
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE t_dist_db
+        <set>
+            UPDATE_TIME = #{updateTime},
+            UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+            <!--<if test="delFlag != null and delFlag != ''">-->
+                <!--,DEL_FLAG = #{delFlag,jdbcType=VARCHAR}-->
+            <!--</if>-->
+        </set>
+        WHERE ID = #{id}
+    </update>
+
+    <update id="remove">
+        UPDATE t_dist_db
+        <set>
+            UPDATE_TIME = #{updateTime},
+            UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+            DEL_FLAG = '1'
+        </set>
+        WHERE ID = #{id,jdbcType=VARCHAR}
+    </update>
+
+</mapper>
+

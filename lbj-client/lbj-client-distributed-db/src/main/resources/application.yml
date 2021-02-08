@@ -1,0 +1,41 @@
+server:
+  port: 16001
+spring:
+  application:
+    name: lbj-client-dis-db
+
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://192.168.160.165:13306/lbj_db?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf8&generateSimpleParameterMetadata=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@/11:1521/orcl
+#    username: 111
+#    password: 111
+
+# 配置日志级别
+logging:
+  level:
+    #    root: info
+    root: debug
+  file: ./data/log/${spring.application.name}.log
+
+mybatis:
+  #注意：一定要对应mapper映射xml文件的所在路径
+  mapper-locations: classpath:mapper/*.xml
+  # 注意：对应实体类的路径
+  type-aliases-package: com.lbj.distributed.db.model
+  callSettersOnNulls: true
+  configuration:
+    #打印mybatis生成的sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #指定 MyBatis 如何自动映射 数据基表的列 NONE：不映射　PARTIAL:部分  FULL:全部
+    auto-mapping-behavior: partial
+    #使用驼峰命名法转换字段
+    map-underscore-to-camel-case: true
+
+
+
+
