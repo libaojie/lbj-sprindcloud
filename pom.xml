@@ -12,12 +12,12 @@
         <module>lbj-gateway</module>
         <module>lbj-feign</module>
         <module>lbj-sidecar</module>
+        <module>lbj-common</module>
     </modules>
 
     <name>${project.artifactId}</name>
     <description>集群</description>
     <packaging>pom</packaging>
-
 
     <build>
         <finalName>${project.artifactId}</finalName>
