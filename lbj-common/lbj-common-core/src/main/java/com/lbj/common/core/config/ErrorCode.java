@@ -1,17 +1,16 @@
 package com.lbj.common.core.config;
 
 
-
 public enum ErrorCode implements IErrorCodeEnum {
 
-	SUCCESS(0,"成功"),
-	FAILURE(1,"失败"),
-    EXCEPTION(2,"系统异常"),
+    SUCCESS(0, "成功"),
+    FAILURE(1, "失败"),
+    EXCEPTION(2, "系统异常"),
 
-	FailureInsert(101001,"增加失败"), 
-	FailureUpdate(101002,"修改失败"),
-	FailureRemove(101003,"删除失败"),
-	FailureSelect(101004,"查询失败"),
+    FailureInsert(101001, "增加失败"),
+    FailureUpdate(101002, "修改失败"),
+    FailureRemove(101003, "删除失败"),
+    FailureSelect(101004, "查询失败"),
     IdNotFound(101005, "id未传入"),
     NoDataById(101006, "根据id无法找到此项"),
 
@@ -34,14 +33,12 @@ public enum ErrorCode implements IErrorCodeEnum {
     public String toString() {
         return this.code + "_" + this.msg;
     }
-    
-//    @Override
-    public String getCode(){
-    	return String.valueOf(this.code);
+
+    public String getCode() {
+        return String.valueOf(this.code);
     }
-    
-//    @Override
-    public String getMsg(){
-    	return this.msg;
+
+    public String getMsg() {
+        return this.msg;
     }
 }
