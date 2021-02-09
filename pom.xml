@@ -13,11 +13,19 @@
         <module>lbj-feign</module>
         <module>lbj-sidecar</module>
         <module>lbj-common</module>
+        <module>lbj-client</module>
     </modules>
 
     <name>${project.artifactId}</name>
     <description>集群</description>
     <packaging>pom</packaging>
+
+    <!-- 为了解决druid那个引包附带springboot版本较低的问题 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+    </parent>
 
     <build>
         <finalName>${project.artifactId}</finalName>

@@ -10,10 +10,18 @@
         <module>lbj-client-demo</module>
         <module>lbj-client-kafka-provider</module>
         <module>lbj-client-kafka-consumer</module>
-        <module>lbj-distributed-db</module>
+        <module>lbj-client-distributed-db</module>
+        <module>lbj-client-dynamic-db</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>功能端</description>
+
+    <parent>
+        <artifactId>lbj-springcloud</artifactId>
+        <groupId>com.lbj</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
 
 
 </project>
