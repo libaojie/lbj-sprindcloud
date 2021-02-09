@@ -1,5 +1,6 @@
 package com.lbj.distributed.db.controller;
 
+import com.lbj.common.client.annotation.RunTime;
 import com.lbj.common.core.config.ErrorCode;
 import com.lbj.common.core.ret.CommRes;
 import com.lbj.distributed.db.dao.DistributeLockMapper;
@@ -37,7 +38,9 @@ public class TestController {
         return new CommRes(ErrorCode.SUCCESS, "完成");
     }
 
+
     @RequestMapping("list")
+    @RunTime(remark = "测试备注")
     public CommRes list() throws Exception {
         List<DistributeLock> distributeLock = distributeLockMapper.find();
         return new CommRes(ErrorCode.SUCCESS, distributeLock);

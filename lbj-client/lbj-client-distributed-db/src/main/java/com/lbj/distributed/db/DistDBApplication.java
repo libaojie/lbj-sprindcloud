@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Import;
 @Slf4j
 @ServletComponentScan
 @SpringBootApplication
-@ComponentScan({"com.lbj.common.client.component", "com.lbj.distributed.db"})
+@ComponentScan({"com.lbj.common.client", "com.lbj.distributed.db"})
 @Import({MyWebMvcConfigurerAdapter.class})
 public class DistDBApplication {
     public static void main(String[] args) {
