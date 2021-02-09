@@ -12,6 +12,7 @@
         <module>lbj-client-kafka-consumer</module>
         <module>lbj-client-distributed-db</module>
         <module>lbj-client-dynamic-db</module>
+        <module>lbj-client-distributed-redis</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>功能端</description>
