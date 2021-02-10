@@ -1,6 +1,7 @@
 package com.lbj.distributed.redis;
 
 import com.lbj.common.client.config.MyWebMvcConfigurerAdapter;
+import com.lbj.distributed.redis.config.RedissonConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ import org.springframework.context.annotation.Import;
 @ServletComponentScan
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @ComponentScan({"com.lbj.common.client", "com.lbj.distributed.redis"})
-@Import({MyWebMvcConfigurerAdapter.class})
+@Import({MyWebMvcConfigurerAdapter.class, RedissonConfig.class})
 public class DistRedisApplication {
     public static void main(String[] args) {
         SpringApplication.run(DistRedisApplication.class, args);
