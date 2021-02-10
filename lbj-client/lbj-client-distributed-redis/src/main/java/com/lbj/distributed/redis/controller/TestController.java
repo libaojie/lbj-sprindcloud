@@ -4,6 +4,7 @@ import com.lbj.common.client.ClientConstant;
 import com.lbj.common.client.base.BaseContextHandler;
 import com.lbj.common.core.config.ErrorCode;
 import com.lbj.common.core.ret.CommRes;
+import com.lbj.distributed.redis.annitation.RedisLock;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -93,6 +94,19 @@ public class TestController {
         }
         return new CommRes(ErrorCode.SUCCESS, "结束");
     }
+
+    /**
+     * 锁,面向切片
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/test/redisson/aspect")
+    @RedisLock(key = "test")
+    public CommRes test3() throws Exception {
+        Thread.sleep(10000);
+        return new CommRes(ErrorCode.SUCCESS, "1");
+    }
+
 
 
 
