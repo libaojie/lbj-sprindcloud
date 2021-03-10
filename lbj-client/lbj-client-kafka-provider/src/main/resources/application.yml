@@ -32,7 +32,7 @@ spring:
       kafka: #如果用的是rabbitMQ这里填 rabbit
         binder:
           brokers: #Kafka的消息中间件服务器地址
-            - 192.168.160.165:19092
+            - 192.168.162.165:19092
       bindings:
         output: #通道名称
           binder: kafka
